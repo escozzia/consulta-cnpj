@@ -1,0 +1,8 @@
+# OpenJDK 17 image;
+FROM openjdk:17-jdk-slim
+# Copy project target .jar;
+COPY ./api/target/api-1.0-SNAPSHOT.jar /app/
+# Expose port 8081;
+EXPOSE 8081
+# Start application;
+CMD ["java", "-jar", "/app/api-1.0-SNAPSHOT.jar"]

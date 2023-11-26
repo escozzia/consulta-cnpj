@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "7bf8d4f3-dd35-4463-97b8-2a26ba24d56c",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15020232"
+	},
+	"item": [
+		{
+			"name": "company-get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/company/27865757000102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"company",
+						"27865757000102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "company-save",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cnpj\": \"27865757000102\",\r\n    \"name\": \"GLOBO COMUNICACAO E PARTICIPACOES S/A\",\r\n    \"dtRegistry\": \"1986-01-31\",\r\n    \"status\": \"Ativa\",\r\n    \"phone\": \"45999744542\",\r\n    \"address\": {\r\n        \"description\": \"RUA TESTE\",\r\n        \"city\": {\r\n            \"ibge\": 3304557,\r\n            \"description\": \"Rio de Janeiro\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/company/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"company",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

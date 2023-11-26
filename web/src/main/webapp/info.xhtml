@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:o="http://omnifaces.org/ui" xmlns:h1="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head><title>Consulta CNPJ</title></head>
+    <body>
+        <h:form id="infoFormId">
+            <h:panelGrid columns="1">
+                <p:row>
+                    <o:outputLabel for="nameId" value="Razão Social: "/>
+                    <h:outputText id="nameId" value="#{infobean.company.name}" styleClass="font-normal"/>
+                </p:row>
+                <p:row>
+                    <o:outputLabel for="cityId" value="Cidade: "/>
+                    <h:outputText id="cityId" value="#{infobean.company.address.city.description}" styleClass="font-normal"/>
+                </p:row>
+                <p:row>
+                    <o:outputLabel for="statusId" value="Situação Cadastral: "/>
+                    <h:outputText id="statusId" value="#{infobean.company.status}" styleClass="font-normal"/>
+                </p:row>
+                <p:row>
+                    <o:outputLabel for="registryId" value="Data de Cadastro: "/>
+                    <h:outputText id="registryId" value="#{infobean.company.dtRegistry}" styleClass="font-normal">
+                        <f:convertDateTime pattern="dd.MM.yyyy"/>
+                    </h:outputText>
+                </p:row>
+                <p:row>
+                    <o:outputLabel for="phoneId" value="Telefone: "/>
+                    <p:inputText id="phoneId" value="#{infobean.company.phone}" styleClass="font-normal"/>
+                    <p:message for="phoneId" id="phoneMessageId" showDetail="true" autoUpdate="true" closable="true" style="color: red;"/>
+                </p:row>
+                <p:row>
+                    <o:outputLabel for="addressId" value="Endereço: "/>
+                    <p:inputText id="addressId"  value="#{infobean.company.address.description}" styleClass="font-normal"/>
+                    <p:message for="addressId" id="addressMssageId" showDetail="true" autoUpdate="true" closable="true" style="color: red;"/>
+                </p:row>
+                <h:panelGrid columns="2">
+                    <h:commandButton id="voltarId" value="Voltar" actionListener="#{infobean.navigate()}"/>
+                    <h:commandButton id="salvarId" value="Salvar" actionListener="#{infobean.save()}" oncomplete="PF('confirmation').show();"/>
+                </h:panelGrid>
+            </h:panelGrid>
+            <p:message for="salvarId" id="salvarMessageId" showDetail="true" autoUpdate="true" closable="true" style="color: red;"/>
+        </h:form>
+        <p:message for="infoFormId" id="sucessoMessageId" showDetail="true" autoUpdate="true" closable="true" style="color: green;"/>
+    </body>
+</html>
